@@ -1,9 +1,9 @@
 if exists("g:loaded_comment")
     finish
 en
-let g:loaded_comment = "2.1"
+let g:loaded_comment = "2.2"
 
-let g:comment_define = extend(exists('g:comment_define') ? g:comment_define : {},
+let g:comment_format = extend(exists('g:comment_format') ? g:comment_format : {},
             \ {'vim': '"%s'}, "keep")
 
 let g:comment_keymap = extend(exists('g:comment_keymap') ? g:comment_keymap : {},
@@ -55,7 +55,7 @@ fun! s:Comment() range
 endf
 
 fun! s:CommStr(...)
-    return a:0 > 0 && exists('g:comment_define') && has_key(g:comment_define, a:1)
-                \? g:comment_define[a:1]
+    return a:0 > 0 && exists('g:comment_format') && has_key(g:comment_format, a:1)
+                \? g:comment_format[a:1]
                 \: (exists('&cms') ? &cms : '')
 endf

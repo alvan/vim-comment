@@ -19,7 +19,7 @@ Press <kbd>&lt;leader&gt;x</kbd> to toggle comment.
 
 Set in your vimrc (optional):
 
-    let g:comment_define = {'vim': '" %s'}
+    let g:comment_format = {'vim': '" %s'}
     " OR
     autocmd FileType html setlocal cms=<!--%s-->
 
